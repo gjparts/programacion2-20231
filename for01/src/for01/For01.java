@@ -74,5 +74,7 @@ public class For01 {
         System.out.println("******");
         for( int i = 100; i >= 0; i-=10 )
             System.out.println(i);
+        
+        
     }    
 }
