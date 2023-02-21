@@ -50,6 +50,10 @@ public class Arreglos0001 {
         float arrfloat2[] = { 3.1416f, 6.78f, 9.11f, 3.11f };
         System.out.println( "elemento 0 de arrfloat2: "+arrfloat2[0] );
         
+        //recorrer un arreglo
+        for( int i = 0; i < arrdouble2.length; i++ )
+            System.out.println("Indice: "+i+", Valor: "+arrdouble2[i]);
+        
     }
     
 }
