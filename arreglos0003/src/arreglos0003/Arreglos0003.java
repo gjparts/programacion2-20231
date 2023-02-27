@@ -1,8 +1,16 @@
 package arreglos0003;
 import java.util.Scanner;
 public class Arreglos0003 {
-
+    
+    //crear una variable global (propiedad de clase)
+    //para que arreglo este disponible en todas las funciones/metodos
+    //de la clase
+    //ponemos static porque nuestro main es static.
+    static int[] arreglo = new int[10];
+    
     public static void main(String[] args) {
+        
+        
         /*Hacer un programa que tenga un arreglo unidimensional
         de enteros de 10 posiciones.
         mostrar al usuario un menu como el siguiente:
