@@ -1,5 +1,7 @@
 package arreglos0003;
 import java.util.Scanner;
+import java.util.Random;
+
 public class Arreglos0003 {
     
     //crear una variable global (propiedad de clase)
@@ -7,6 +9,8 @@ public class Arreglos0003 {
     //de la clase
     //ponemos static porque nuestro main es static.
     static int[] arreglo = new int[10];
+    //variable para almacenar la suma de todos los elementos del arreglo
+    static int suma = 0;
     
     public static void main(String[] args) {
         
@@ -59,18 +63,36 @@ public class Arreglos0003 {
     //funciones
     //funcion que ejecuta el codigo de la opcion 1 del menu
     public static void opcion1(){
-        System.out.println("HA ELEGIDO LA OPCION 1");
+        System.out.println("\n\n\n\n\n\n\n\n\nGenerar numeros al azar en el arreglo");
+        //lenar el arreglo con numeros al azar entre 1 y 1000
+        Random azar = new Random();
+        //resetar la variable suma
+        suma = 0;
+        for( int i = 0; i < arreglo.length; i++ ){
+            arreglo[i] = azar.nextInt(1000-1+1)+1;
+            suma += arreglo[i]; //sumar el numero generado
+        }
     }
     //funcion que ejecuta el codigo de la opcion 2 del menu
     public static void opcion2(){
-        System.out.println("HA ELEGIDO LA OPCION 2");
+        System.out.println("\n\n\n\n\n\n\n\n\nImprimir el arreglo");
+        //imprimir el arreglo
+        for( int i = 0; i < arreglo.length; i++ ){
+            System.out.println( "Posicion "+i+", valor: "+arreglo[i] );
+        }
     }
     //funcion que ejecuta el codigo de la opcion 3 del menu
     public static void opcion3(){
-        System.out.println("HA ELEGIDO LA OPCION 3");
+        System.out.println("\n\n\n\n\n\n\n\n\nLa suma del arreglo es "+suma);
     }
     //funcion que ejecuta el codigo de la opcion 4 del menu
     public static void opcion4(){
-        System.out.println("HA ELEGIDO LA OPCION 4");
+        System.out.println("\n\n\n\n\n\n\n\n\nObtener el numero mayor");
+        int mayor = Integer.MIN_VALUE;
+        for( int i = 0; i < arreglo.length; i++ ){
+            if( arreglo[i] > mayor )
+                mayor = arreglo[i];
+        }
+        System.out.println("El numero mayor es: "+mayor);
     }
 }
