@@ -22,19 +22,26 @@ public class Cadenas0013 {
             System.out.println("El DNI no debe de llevar guiones.");
         else
         {
-            //mostrar los segmentos de la cadena
-            String depto, munic, anio, corr;
-            depto = dni.substring(0, 2);
-            System.out.println("Departamento: "+depto);
+            try{
+                //codigo propenso a error
+                //mostrar los segmentos de la cadena
+                String depto, munic, anio, corr;
+                depto = dni.substring(0, 2);
+                System.out.println("Departamento: "+depto);
+
+                munic = dni.substring(2,4);
+                System.out.println("Municipio: "+munic);
+
+                anio = dni.substring(4,8);
+                System.out.println("Año: "+anio);
+
+                corr = dni.substring(8,13);
+                System.out.println("Correlativo: "+corr);
+            }catch(Exception ex){
+                //en caso de error:
+                System.out.println("La cedula digitada debe ser de al menos 13 caracteres.");
+            }
             
-            munic = dni.substring(2,4);
-            System.out.println("Municipio: "+munic);
-            
-            anio = dni.substring(4,8);
-            System.out.println("Año: "+anio);
-            
-            corr = dni.substring(8,13);
-            System.out.println("Correlativo: "+corr);
         }
     }
     

@@ -1,5 +1,5 @@
 package cadenas0014;
-
+import java.util.Scanner;
 public class Cadenas0014 {
 
     public static void main(String[] args) {
@@ -20,6 +20,31 @@ public class Cadenas0014 {
 
         -> importante: si se digita una posicion que no existe
         dentro de la cadena A entonces decirle al usuario que no se puede.*/
+        Scanner s = new Scanner(System.in);
+        String a,b;
+        int posicion;
+        System.out.print("Digitar la cadena A: ");
+        a = s.nextLine();
+        System.out.print("Digitar la cadena B: ");
+        b = s.nextLine();
+        System.out.print("Digitar la posicion de insercion: ");
+        posicion = s.nextInt();
+        
+        //validar que la posicion este dentro de los limites de la cadena A
+        if( posicion < 0 || posicion > a.length() )
+            System.out.println("Posicion no valida.");
+        else
+        {
+            //para la nueva cadena extraeremos las substring antes de la posicion
+            //y despues de la posicion de insercion.
+            String antes, despues;
+            antes = a.substring(0, posicion);
+            despues = a.substring(posicion,a.length());
+            
+            //generar nueva cadena
+            String nueva = antes+b+despues;
+            System.out.println("La nueva cadena de texto es: "+nueva);
+        }
     }
     
 }
